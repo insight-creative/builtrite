@@ -1,0 +1,109 @@
+#{$all-buttons},
+.btn {
+  appearance: none;
+  background-color: $action-color;
+  border: 0;
+  border-radius:0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: $small-spacing $base-spacing;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color $base-duration $base-timing;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    background-color: shade($action-color, 20%);
+    color: #fff;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $action-color;
+    }
+  }
+}
+
+.tailor-ui {
+    .tailor-button__inner {
+      border-radius:0;
+    }
+
+//PRIMARY BUTTON
+.tailor-button--primary {
+  .tailor-button__inner {
+    font-family:$SFBLACK;
+    font-size:14px;
+    padding:10px 15px;
+    min-width:150px;
+    display:inline-block;
+    &:hover {
+      box-shadow:0px 2px 5px rgba(0,0,0,.3);
+      background:$light-gray;
+      &:after {
+        left:8px;
+      }
+    }
+    background:$yellow;
+    color:$dark-gray;
+    border:none;
+    span {
+      position:relative;
+      top:3px;
+    }
+    //@extend .btn;
+    text-transform:uppercase;
+    font-weight:800;
+    &:after {
+      content:' »';
+      font-family:$SFBLACK;
+      font-weight:800;
+      position:relative;
+      left:5px;
+      bottom:1px;
+      transition:left $base-duration;
+    }
+    .dashicons {
+      transition:left $base-duration;
+      &:before {
+        content:' »';
+        font-family:$SFBLACK;
+        font-weight:800;
+        content:none;
+        }
+      }
+    }
+  }
+  //DEFAULT BUTTON
+  .tailor-button--default {
+    .tailor-button__inner {
+      font-size:15px;
+      font-family:$SFBLACK;
+      text-transform:uppercase;
+      padding:5px 0px;
+      margin-right:10px;
+      margin-bottom:10px;
+      color:$dark-gray;
+      border:none;
+      border-bottom: 4px dotted $dark-gray;
+      background:none;
+      box-shadow:none;
+      &:hover {
+        color:$yellow;
+        border-color:$yellow;
+      }
+      }
+    }
+}

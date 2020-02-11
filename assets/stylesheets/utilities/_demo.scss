@@ -1,0 +1,12 @@
+.specimen-title {
+  @extend .h6;
+  @include margin($small-spacing * 4 null 0);
+
+  & + hr {
+    margin-top: $small-spacing;
+  }
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}

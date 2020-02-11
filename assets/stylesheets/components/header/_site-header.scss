@@ -1,0 +1,28 @@
+.site-header {
+    background-color: $base-background-color;
+    width: 100%;
+    @media #{$tablet-up} {
+      //border-bottom: $base-border;
+    }
+    .masthead-inner {
+      //max-width:$large-screen;
+      margin:0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+}
+
+//base order
+.custom-logo-link,
+.site-branding,
+.menu-toggle,
+.site-navigation,
+#site-search {
+    order: 1;
+}
+
+@import "site-branding";
+@import "site-navigation";
+@import "nav-fixed";
+@import "site-search";

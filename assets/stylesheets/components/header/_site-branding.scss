@@ -1,0 +1,43 @@
+.site-title,
+.custom-logo-link {
+  &:hover {
+    opacity:.7;
+  }
+  transition: opacity .15s;
+  display: inline-block;
+  max-width:152px;
+  width:152px;
+  @media #{$tablet-up} {
+    padding:1em 0;
+  }
+  @include margin($small-spacing);
+  @media #{$tablet-up} {
+    max-width:232px;
+    width:232px;
+    @include margin(0 $base-spacing);
+  }
+  @media #{$xl} {
+    padding:0;
+  }
+}
+
+.site-title {
+  @include font-size(1.5);
+  font-weight: 600;
+}
+
+.site-description {
+  display: none;
+  color: $medium-gray;
+  @media #{$desktop} {
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+.custom-logo-link {
+  line-height: 0;
+  @media #{$tablet-up} {
+    // @include padding($base-spacing null);
+   }
+}

@@ -1,0 +1,107 @@
+.footer-top {
+  @media #{$tablet-up} {
+    position:absolute;
+    background:black;
+    top:0;
+    left:0;
+    right:0;
+  }
+  text-align:center;
+  .footer-menu {
+    top:3px;
+    position:relative;
+    padding:0;
+    @media #{$mobile} {
+      @include padding(1.5em null);
+    }
+    text-transform:uppercase;
+    display:inline-block;
+    margin:0 auto;
+  }
+  li {
+    margin:0 1em;
+    display:block;
+    text-align:center;
+    &.home-link {
+      position:relative;
+      padding:0;
+      bottom:2px;
+      margin:$small-spacing * 1.2 0;
+      a:hover {
+        color:transparent;
+      }
+      &:hover {
+        a:after {
+          @media #{$tablet-up} {
+            color:white;
+          }
+          color:$yellow;
+        }
+      }
+      a:after {
+        transition:color $base-duration;
+        content:"\f409";
+        font-family:Genericons;
+        position:absolute;
+        left:0;
+        right:0;
+        top:50%;
+        font-size:1.5rem;
+        transform:translateY(-50%);
+        @media #{$tablet-up} {
+          color:$yellow;
+        }
+        color:$base-font-color;
+        z-index:1;
+      }
+      a {
+        position:relative;
+        width:20px;
+        z-index:99;
+        top:3px;
+        color:transparent;
+      }
+    }
+   @include padding($base-spacing / 2 null);
+    a {
+      color:$base-font-color;
+      font-size:.9rem;
+      &:hover {
+        color:$yellow;
+      }
+    }
+
+    // media query up
+    @media #{$tablet-up} {
+        float:left;
+        @include padding($small-spacing * 1.2 null);
+        position:relative;
+        a {
+          color:white;
+          @include padding($base-spacing null);
+        }
+        &.home-link {
+          margin-right:$base-spacing;
+        }
+        &:before {
+          content:'';
+          position:absolute;
+          height:10px;
+          bottom:5px;
+          top:50%;
+          transform:translateY(-50%);
+          margin-top:1px;
+          right:-15px;
+          width:1px;
+          background:$medium-gray;
+          opacity:.5;
+        }
+        &:first-child,
+        &:last-child {
+          &:before {
+           content:none;
+        }
+      }
+    }
+  }
+}

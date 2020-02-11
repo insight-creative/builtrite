@@ -1,0 +1,58 @@
+body {
+  background-color: $base-background-color;
+}
+
+.site {
+  overflow: hidden;
+}
+
+.search,
+.archive {
+  .content-area {
+    @include container_small;
+  }
+}
+
+.content-area {
+  @include container;
+  @include padding( ($base-spacing * 4) null );
+  min-height:500px;
+
+  .single & {
+    padding-bottom: 0;
+  }
+
+  .single.has-post-thumbnail & {
+    padding-top: 0;
+  }
+}
+
+@media #{$tablet} {
+  .sidebar {
+  .tailor-row {
+    flex:none !important;
+    flex-direction:column;
+  }
+  .tailor-column {
+    flex:none;
+    widtH:100% !important;
+    flex:none;
+    &:not(:first-of-type) {
+      padding-top:60px;
+    }
+    .tailor-content {
+      padding-left: 0!important;
+      padding-right:0 !important;
+      //padding-bottom:60px;
+      }
+    }
+  }
+}
+
+#masthead + #content {
+  @at-root #masthead {
+    box-shadow:0px 0px 10px rgba(0,0,0,.4);
+  }
+}
+
+//TODO: figure out xl screen layouts and typography

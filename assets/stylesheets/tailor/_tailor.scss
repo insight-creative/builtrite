@@ -1,0 +1,230 @@
+/*--------------------------------------------------------------
+# Tailor
+--------------------------------------------------------------*/
+
+.tailor-ui {
+
+  .minwidth {
+    max-width:$medium-screen;
+    margin:0 auto;
+  }
+
+
+  .minwidth-left {
+    margin:0;
+  }
+
+  .tailor-section {
+    margin:0;
+    @include padding($base-spacing null);
+
+    &:only-of-type {
+      min-height: 500px;
+    }
+  }
+
+  .tailor-section__content {
+    @include container;
+
+    > .tailor-element:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+
+  //tailor column image fixes
+  .tailor-column img {
+      max-width: 100% !important;
+  }
+
+  //tailor map image fixes
+  .tailor-map img {
+      max-width: none !important;
+  }
+
+  .tailor-element {
+    border:none;
+  }
+
+  //cards
+
+  .tailor-card {
+    background:#fefefe;
+  }
+
+  .tailor-ui  {
+    .tailor-box  {
+      padding:0;
+    }
+  }
+
+  #hero {
+    //background-image:url('assets/img/hero1.jpg');
+    background-size:cover;
+    background-color:$dark-gray;
+    background-position:center center;
+    padding:0;
+     .tailor-section__content {
+      padding:0;
+      width:100%;
+      max-width:100%;
+      .tailor-hero {
+        @media #{$desktop} {
+          @include padding(13vh 0);
+          h1 {
+            font-size:3em;
+          }
+        }
+        margin:0;
+        border:none;
+        @media (max-width:$large-screen) {
+          padding:100px 0 !important;
+          h1,h2, {
+            font-size:2.7rem;
+          }
+        }
+        @media #{$mobile} {
+          h1,h2 {
+            font-size:2.5rem;
+          }
+        }
+        @media #{$xs} {
+          h1,h2 {
+            font-size:2.2rem;
+          }
+        }
+      }
+      .tailor-hero__content {
+        //padding-top:10px;
+      //  padding-bottom:1.2em;
+        h1 {
+          //line-height:0;
+          //text-shadow:0px 0px 15px rgba(0,0,0, .4);
+          font-weight:bold;
+          margin-bottom::.3em;
+        }
+        h2 {
+          margin-bottom:.5em;
+        }
+        @include container;
+        .tailor-button {
+          margin-bottom:5px;
+        }
+        .tailor-content {
+          max-width:$medium-screen;
+        }
+      }
+    }
+  }
+
+
+  &:not(.home) #hero {
+    * {
+      margin-top:0 !important;
+      margin-bottom:0 !important;
+    }
+  }
+
+
+
+  .tailor-box {
+    font-size:1rem;
+    padding-left:0;
+    padding-right:0;
+    .tailor-box__title {
+      font-size:1.2rem;
+      margin-bottom:0;
+      line-height:1.05;
+    }
+  }
+
+  &.home  #page .tailor-grid {
+    margin:0 -1em;
+  }
+
+  .tailor-grid--tablet {
+    margin:0 -1em;
+  }
+
+  .tailor-gallery {
+    //margin-left:-1em;
+    .tailor-grid__item {
+
+    }
+  }
+  .black-bg {
+    background-color:$dark-gray;
+    color: white;
+  }
+
+  .yellow-bg {
+      background-color:$yellow;
+      .tailor-button--default {
+        .tailor-button__inner {
+          &:hover {
+            color:white;
+            border-color:white;
+          }
+        }
+      }
+  }
+
+  .tailor-box--image .tailor-box__graphic {
+    max-width:100%;
+  }
+
+  .tailor-carousel__item {
+    padding:0;
+  }
+
+  .slick-gray {
+    li:hover {
+      button {
+        background:$medium-gray !important;
+        border-color:$medium-gray !important;
+      }
+    }
+  	  .slick-active button{
+  			background:$medium-gray;
+        border-color:$medium-gray;
+  		}
+  }
+
+  .minwidthlarge {
+    .tailor-section__content {
+    max-width:$large-screen !important;
+    }
+  }
+
+  .minwidthxl {
+    .tailor-section__content {
+    max-width:$xl-screen !important;
+    }
+  }
+
+
+.products {
+  .tailor-box__graphic {
+    //min-height:200px;
+  }
+}
+
+  // tailor parts
+
+  @import 'homepage';
+  @import 'hero';
+  @import "tailor/type";
+  @import "../components/product/industry";
+  @import 'products';
+
+
+
+}//tailor-ui
+
+// ie fixes
+
+.ie.tailor-ui {
+  .tailor-section__content {
+    margin:0;
+  }
+}

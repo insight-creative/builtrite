@@ -1,0 +1,137 @@
+&.tax-industry {
+  .site-header a[href*="industries"] {
+    background:$yellow;
+  }
+  .industries,
+  .products {
+    @include padding(100px null);
+    .tailor-section__content {
+          @include container_large;
+    }
+  }
+  .widget-title {
+    display:none;
+  }
+  .product-cat-list > li:first-child {
+    margin-top:0;
+  }
+  .product-wrap {
+    > h5 {
+      text-transform:uppercase;
+      padding:.5em 0 2.5em 0;
+      @media #{$mobile} {
+        padding:1em 15px 1em 15px;
+      }
+    }
+  }
+  .products.industries {
+    .tailor-column {
+      width:100% !important;
+    }
+  }
+  #hero {
+    border:none;
+  }
+  .desc {
+    background:$light-gray;
+    .tailor-section__content {
+      max-width:$xl-screen;
+    }
+    @media #{$tablet-up} {
+      div {
+        margin:0 auto;
+        max-width:100%;
+        @include clearfix;
+        div {
+       float:left;
+       &:first-child {
+        width:80%;
+        padding-right:80px;
+        }
+        &:last-child {
+          width:20%;
+          a {
+            font-size:1.2rem;
+            floaT:right;
+            &:hover {
+              background:$yellow;
+              color:#000;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#view-products {
+  &:focus {
+    outline:none !important;
+  }
+}
+
+#page  {
+  #industries-grid {
+    padding:70px 0;
+    .products {
+      margin:0 -$small-spacing;
+    }
+    .product-item {
+      &:hover {
+        .tailor-box__graphic {
+          opacity:.8;
+        }
+      }
+      .tailor-box {
+        position:relative;
+        @media #{$mobile-up} {
+          padding:$base-spacing 0;
+        }
+        padding:1px 0;
+      }
+      padding: 0 $small-spacing;
+      width:calc(100% / 3);
+      @media #{$tablet} {
+        width:50%;
+      }
+      @media #{$xs} {
+        width:100%;
+        min-height:1px;
+      }
+      float:left;
+      h3 {
+        @media #{$mobile-up} {
+          position:absolute;
+          width:95%;
+        }
+      }
+      //min-height:360px;
+    }
+  .tailor-box__graphic {
+    margin-bottom:0px;
+    img {
+      width:100%;
+    }
+  }
+  h3 {
+    margin-top:$small-spacing;
+  }
+  .product-wrap {
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+  .product-wrap {
+    @include container_xl;
+    }
+  }
+}
+
+// ie fixes
+
+
+&.ie #page #industries-grid .product-item {
+  @media #{$tablet-up} {
+  width:32%;
+  }
+}

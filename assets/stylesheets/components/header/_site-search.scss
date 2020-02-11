@@ -1,0 +1,126 @@
+//BASE WP SEARCH
+.search-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  > label {
+    margin-bottom: 0;
+    flex: auto;
+    font-weight: normal;
+    //position:absolute;
+    @media #{$tablet} {
+      position:relative;
+    }
+  }
+}//.search-form
+
+.search-field {
+  border-radius:0 !important;
+  -webkit-appearance: none !important;
+  //IOS weird line height issue fix
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    line-height:2;
+  }
+  width: 100% !important;
+  margin:0;
+  //min-height:$input-height;
+  &:before,
+  &:after {
+    content:'';
+    height:20px;
+    background:$yellow;
+  }
+}//.search-form-input
+
+#content {
+  .search-form {
+    position:relative;
+  }
+ .search-submit {
+  position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
+  }
+}
+
+.search-submit {
+  padding: .5em;
+  //background-color: transparent !important;
+  color: white;
+  right:0;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $light-gray;
+  }
+  color: $action-color;
+  @media (max-width:$xl-screen - 1px) {
+    #masthead & {
+    position:absolute;
+    right:$base-spacing;
+    background:transparent;
+    color:$base-font-color;
+    top:50%;
+    transform:translateY(-50%);
+    }
+  }
+  @media #{$xl} {
+    color: $action-color;
+    &:hover,
+    &:focus,
+    &:active {
+      color: shade($action-color,25);
+    }
+  };
+
+  .genericon {
+    @include font-size(1.5);
+    transform:scale(1.2);
+    font-weight:900;
+  }
+}//.search-form-submit
+
+
+#site-search {
+  &:hover {
+    .search-submit {
+    background:white;
+    }
+  }
+  background-color: transparent;
+  @media (max-width:$xl-screen - 1px) {
+    padding:0 $small-spacing;
+  }
+  margin-bottom:$small-spacing;
+  @media #{$tablet} {
+    width:100%;
+  }
+  @media #{$xl} {
+    margin:0 0 0 auto;
+    .search-submit {
+      border-radius:0;
+      background:$yellow;
+      min-width:$base-spacing * 4;
+      @include padding($base-spacing * 1.4 $small-spacing);
+    }
+  }
+}
+
+#content .search-submit {
+  background:none;
+  margin-left:10px;
+  &:hover {
+    .genericon {
+      color:$yellow;
+    }
+  }
+}
+
+// for better search focus, jquery controlled
+.search-focused {
+  background:white !important;
+}
+
+@import 'search-toggle';

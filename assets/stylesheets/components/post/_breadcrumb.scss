@@ -1,0 +1,63 @@
+.crumbs {
+	line-height:1;
+	margin-bottom:4em;
+	text-transform:uppercase;
+	font-size:.9rem;
+	.genericon {
+		font-size:1.5rem;
+		color:$yellow;
+		position:relative;
+		bottom:2px;
+	}
+	background:$dark-gray;
+	.crumb-inner {
+		.seperator {
+			display:inline-block;
+			margin:0 .35em;
+		}
+		color:white;
+		@include container-large;
+		@include padding(1.1em $small-spacing .55em $small-spacing);
+		.genericon {
+			position:relative;
+			top:-4px;
+		}
+		@media #{$xs} {
+			padding-bottom:.9em !important;
+			* {
+				font-size:.8rem;
+				&.genericon {
+					margin:0;
+					top:-1px;
+					font-size:1.2rem;
+
+				}
+			}
+			padding:1em $small-spacing;
+		}
+	}
+	a {
+		line-height:1;
+		&.current-item {
+			color:darken($light-gray, 42%);
+			pointer-events:none;
+		}
+		color:white;
+		&:hover {
+			color:$yellow;
+		}
+		&.home {
+			&:hover {
+				.genericon {
+					color:white;
+				}
+			}
+		}
+	}
+}
+
+.tax-industry {
+	.crumb-inner {
+		max-width:$xl-screen;
+	}
+}

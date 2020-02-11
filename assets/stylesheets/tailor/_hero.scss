@@ -1,0 +1,95 @@
+&.home #hero {
+  background:#111;
+  .tailor-carousel__item {
+    background-position: bottom center;
+    @include overlay;
+    z-index:9999;
+    @media #{$tablet-up} {
+      @media (min-height:700px) {
+      height:55vw;
+    }
+    height:600px;
+    max-height:850px;
+    }
+    min-height:480px;
+  }
+  .tailor-hero {
+    .tailor-button__inner {
+      @media #{$tablet-up} {
+        font-size:18px;
+        padding:15px 20px;
+        min-width:200px;
+      }
+    }
+    .tailor-hero__content {
+    //  text-shadow:0px 0px 6px rgba(0,0,0,.3);
+      * {
+      //  max-width:$medium-screen / 1.2;
+      }
+      p {
+        @media #{$tablet} {
+          font-size:1.2rem;
+        }
+        line-height:1.1;
+        margin-bottom:.5em;
+        max-width:500px;
+      }
+    }
+    h1 {
+      @media #{$xl} {
+        font-size:5rem;
+      }
+      color:white;
+      text-shadow:none;
+      //margin:0;
+      line-height:.9;
+    }
+      h2 {
+        margin-top:-.5em;
+      }
+      position:absolute;
+      top:52%;
+      transform:translateY(-50%);
+      display:inline-block;
+      width:100%;
+      margin:0 auto;
+      left:0;
+      right:0;
+  }
+}
+
+&:not(.home) #hero  {
+  @media #{$tablet} {
+    padding:0 !important;
+  }
+  //padding:0 !important;
+  border-bottom:20px solid $yellow;
+  background-size:cover;
+  background-position:Center center;
+  .tailor-hero__content {
+    max-width:$xl-screen !important;
+    position:relative;
+    z-index:999;
+  }
+  .tailor-hero {
+    @include overlay;
+    z-index:9;
+  }
+  text-transform:uppercase;
+  h1 {
+    position:relative;
+    z-index:999;
+    position:relative;
+    top:.25em;
+    @media #{$tablet} {
+      font-size:2.5em;
+      top:.15em;
+    }
+    @media #{$mobile} {
+      font-size:1.8em;
+    }
+    @media #{$xs} {
+      font-size:1.4em;
+    }
+  }
+}

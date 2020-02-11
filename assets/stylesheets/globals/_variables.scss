@@ -1,0 +1,57 @@
+// Breakpoints
+$small-screen: 480px;
+$medium-screen: 780px;
+$large-screen: 920px;
+$xl-screen: 1180px;
+$small-max: $medium-screen - 1;
+$medium-max: $large-screen - 1; // Typography
+// font-size
+//SFUI
+// normal weights
+//@import 'assets/fonts/san-francisco';
+@import 'assets/fonts/sfui-black/sfuiblack';
+@import url('assets/fonts/sfui-display/style.css'); //display black
+$SFBLACK: 'sf_ui_displayblack', sans-serif; //$base-font-family: 'San Francisco','SFNSDisplay-Regular',  sans-serif;
+$base-font-family: 'SFUI Display','San Francisco', sans-serif;
+$heading-font-family: $SFBLACK; // Font Sizes
+$base-font-size: 16px; // Line height
+$base-line-height: 1.375;
+$heading-line-height: 1.1; // Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0; // Colors
+$blue: #000;
+$orange: #ffbb00;
+$dark-gray: #060709;
+$medium-gray: lighten($dark-gray,33);
+$light-gray: #eeeeee; // builrite colors
+$yellow: $orange; // Font Colors
+$base-font-color: $dark-gray;
+$action-color: $blue; // Border
+$base-border-color: rgba($dark-gray,.125);
+$base-border: 1px solid $base-border-color; // Background Colors
+$base-background-color: #fff;
+$secondary-background-color: tint($base-border-color, 75%); // Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3); // Animations
+$base-duration: 100ms;
+$base-timing: ease; // Forms
+$input-height: 50px; //TAILOR OVERRIDES
+//Media Queries
+$xs: "(max-width: 479px)" !default;
+$mobile-up: "(min-width: $small-screen)" !default;
+$mobile: "(max-width: $small-max)" !default;
+$tablet: "(max-width: $medium-max)" !default;
+$tablet-up: "(min-width: $medium-screen)" !default;
+$desktop: "(min-width: $large-screen)" !default;
+$xl: "(min-width: $xl-screen)" !default;
+$global-spacing-vertical: $base-spacing !default;
+$global-spacing-horizontal: $base-spacing !default;
+$global-transition-duration: $base-duration !default;
+$global-primary-color: #0f95ee !default;
+$global-secondary-color: #a0a5aa !default;
+$global-text-color: #404040 !default;
+$global-border-color: $base-border-color !default;
+$global-border-radius: $base-border-radius !default;
+$global-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(0, 0, 0, 0.05) !default;

@@ -1,0 +1,167 @@
+.site-footer {
+  background:$light-gray;
+  color:$dark-gray;
+  position:relative;
+  a {
+    color:$base-font-color;
+    &:hover {
+      color:$yellow;
+    }
+  }
+  padding: $base-spacing * 8 0 $base-spacing * 5;
+  padding-top:0;
+  //border-top: $base-border;
+  @include font-size(.875);
+  .footer-inner {
+    @include container-large;
+    max-width:$large-screen;
+    @include clearfix;
+  }
+  .widget_wpcom_social_media_icons_widge {
+    li {
+      float:right;
+    }
+  }
+
+  //back to top link
+  .top-link {
+    @include padding($base-spacing null);
+    float: right;
+  }
+  .widget_black_studio_tinymce {
+    margin-top:2em;
+    a {
+      transition:opacity .15s;
+      &:hover {
+      opacity:.8;
+      }
+    }
+  }
+
+  .widget:not(.widget_black_studio_tinymce) {
+    label {
+      display:none !important;
+    }
+    &.gform_widget {
+      .widget-title {
+        margin-bottom:0;
+        &:before {
+          @media #{$tablet} {
+            margin-left:-15px;
+          }
+          content:"\f410";
+          font-family:genericons;
+          position:relative;
+          top:8px;
+          padding:5px;
+          font-size:2rem;
+          margin-right:10px;
+          color:$yellow;
+          border-radius:50%;
+          background:$dark-gray;
+        }
+      }
+    }
+    .gform_wrapper {
+      margin-top:0;
+    }
+    button {
+      width:100%;
+    }
+    @media #{$tablet} {
+      padding-top:50px !important;
+      label {
+        display:block;
+        width:100%;
+        text-align:center;
+      }
+      text-align:center;
+    }
+    width:300px !important;
+    margin:0 auto;
+    .widget-title {
+      border:none;
+      text-transform:uppercase;
+    }
+    clear:both;
+    .gfield {
+      padding-right:0 !important;
+      width:100%;
+    }
+    input {
+      width:100%;
+    }
+    .gform_footer.top_label {
+      margin-top:0 !important;
+    }
+    padding-left:0;
+    @media #{$desktop} {
+      margin-top:0;
+      &:first-of-type {
+      margin-top:-11.5em;
+      }
+    }
+    margin-top:0;
+    float:right;
+    ul {
+      @media #{$desktop} {
+        text-align:right;
+      }
+    }
+    li {
+      //float:left;
+      list-style-type:none;
+      margin-right:1em;
+      &:last-child {
+        margin:0;
+      }
+      a {
+        &[href*='facebook'] {
+          &:before {
+            content:'\f204';
+          }
+        }
+        border:4px solid $base-font-color;
+        border-radius:50%;
+        padding:5px;
+        font-size:2rem;
+        transition:all $base-duration;
+        &:hover {
+          color:$yellow;
+          border-color:$yellow;
+        }
+      }
+    }
+  }
+  @media #{$tablet} {
+    text-align:center;
+    .site-contact {
+    .custom-logo-link,
+    .widget {
+      img {
+        max-width:275px;
+      }
+      max-width:100%;
+      padding-top:1em;
+      li {
+        float:none;
+        display:inline-block;
+      }
+        display:block;
+        clear:both;
+        margin:0 auto;
+        float:none;
+      }
+    }
+  }
+}
+
+.site-credits {
+  @include container-large;
+  clear:both;
+}
+
+@import "site-footer-nav";
+@import "site-contact";
+@import "site-info";
+@import "site-morefoot";

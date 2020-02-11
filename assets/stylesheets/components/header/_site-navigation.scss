@@ -1,0 +1,201 @@
+//BASE SITE NAVIGATION
+.menu-toggle {
+  position:relative;
+  span {
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    right:0;
+    &:before {
+      font-size:25px;
+    }
+  }
+  &.closer span:before {
+    font-size:46px;
+    position:relative;
+    left:9px;
+    top:2px
+  }
+    &,
+    &:hover,
+    &:focus, {
+      background:none;
+      outline:none;
+      color:$dark-gray;
+    }
+    &:hover {
+      //  color:#ccc;
+    }
+    @include margin(null $small-spacing null auto);
+    @include padding(null ($small-spacing * 1.0625));
+    padding:0;
+    @media #{$xl} {
+        display: none !important;
+    }
+}
+
+.link-active {
+  color:$action-color;
+  text-decoration:underline;
+}
+
+.site-navigation {
+    display: none;
+    flex-basis: 100%;
+    background-color: $base-font-color;
+    //@include padding($small-spacing null);
+    @media #{$xl} {
+      padding-top:0;
+    }
+
+    &.expanded {
+        display: none;
+    }
+    @media #{$xl} {
+        flex-basis: auto;
+        display: block !important;
+        background-color: transparent;
+        padding: 0;
+    }
+}
+
+.main-menu {
+  text-transform:uppercase;
+  font-family:$SFBLACK;
+  font-weight:500;
+  letter-spacing:-1px;
+    @media #{$xl} {
+      //@include margin(null $small-spacing);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    li {
+        position: relative;
+        @media #{xl} {
+            display: inline-block;
+        }
+        transition:background $base-duration, color $base-duration, opacity $base-duration;
+
+        > a {
+            display: block;
+            @include padding($small-spacing);
+
+            color: white;
+
+            &:active,
+            &:focus,
+            &:hover {
+                color: $light-gray;
+            }
+            @media #{$xl} {
+              @include padding($base-spacing * 1.25 $small-spacing * 1.2);
+              //color: $action-color;
+              color:$base-font-color;
+
+              &:active,
+              &:focus,
+              &:hover {
+                  color: shade($action-color, 25%);
+              }
+            }
+        }
+
+        &.current-menu-item > a,
+        &.current-menu-ancestor > a {
+            color: $light-gray;
+            color:$dark-gray;
+            background:$yellow;
+            @media #{$desktop} {
+              color: $dark-gray;
+            }
+        }
+
+        &:hover {
+            //background-color: rgba(shade($action-color, 25%),.75);
+            background-color:$yellow;
+            a {
+              color:$dark-gray;
+            }
+            @media #{$desktop} {
+              background-color: $yellow;
+            }
+
+            .sub-menu {
+              display: block;
+            }
+        }
+    }//li
+
+    .sub-menu {
+        display: none;
+
+        @media #{$xl} {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            z-index: 9999;
+            border: $base-border;
+
+            &:before {
+                position: absolute;
+                display: block;
+                content: '';
+                @include triangle(up, $light-gray, 22px);
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            &:after {
+                position: absolute;
+                display: block;
+                content: '';
+                @include triangle(up, white, 18px);
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            li {
+                border-bottom: $base-border;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                > a {
+                    @include padding($small-spacing $base-spacing);
+                    min-width: $base-spacing * 8;
+                }
+            }
+        }
+    }//sub-menu
+}
+
+//top mobile nav
+.site-navigation {
+  .mobile-top & {
+    order: 0;
+  }
+  @media #{$xl} {
+    &,
+    .mobile-top & {
+      order: 1;
+    }
+  }
+}
+
+
+// closer
+
+.closer {
+
+}
+
+@import 'nav-right';
+@import 'nav-left';
+@import 'nav-center';

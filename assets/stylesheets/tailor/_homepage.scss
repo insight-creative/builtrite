@@ -1,0 +1,133 @@
+#featured,
+.product-carousel {
+  .tailor-box {
+    @media #{$tablet} {
+     margin:0;
+    // width:92% !important;
+    padding:0 1.375em;
+    }
+    .tailor-box__graphic {
+      border:5px solid rgba(255,255,255, .3);
+    }
+    margin-left:$base-spacing;
+    margin-right:$base-spacing;
+    .tailor-box__title {
+      color:$yellow;
+      margin-bottom:5px;
+      font-size:1.1rem;
+    }
+  }
+  .tailor-carousel__wrap {
+    @media #{$desktop} {
+    margin:0 -1em;
+    }
+  }
+  .slick-dots {
+    @media #{$tablet-up} {
+      bottom:0;
+      margin-left:-.8em;
+    }
+    bottom:-40px;
+    margin-left:-.3em;
+  }
+}
+
+#industries {
+  .tailor-image > a {
+    pointer-events:none;
+  }
+  @media #{$xs} {
+    .tailor-row {
+      display:block;
+      img {
+        @media #{$mobile} {
+          margin-top:15px;
+        }
+        width:100%;
+      }
+    }
+    .tailor-section__content {
+      display:block;
+      flex:none;
+    }
+    .tailor-column {
+      display:block;
+      width:100% !important;
+      max-width:100%;
+      flex:none;
+    }
+  }
+  .tailor-card {
+    img {
+      max-height:200px;
+      width:auto;
+    //  width:100%;
+    }
+    .tailor-content {
+      margin-bottom:1.3em;
+    }
+    @media #{$tablet-up} {
+      img {
+        margin-top:-3em;
+      }
+    }
+    padding:1.5em 0;
+    .tailor-card__header {
+      padding-bottom:3px;
+    }
+    > div, header {
+      padding-left:0;
+    }
+    box-shadow:none;
+    border-bottom:4px dotted $dark-gray;
+    &:last-child {
+      border:none;
+    }
+    .tailor-card__header {
+      border:none;
+    }
+  }
+  .slick-dots {
+    @extend .slick-gray;
+    position:relative;
+    top:$small-spacing;
+    left:-$small-spacing;
+  }
+}
+
+#about {
+  @media #{$tablet} {
+    .tailor-column {
+      min-width:170px;
+
+    }
+  }
+}
+
+.section-title {
+  h1,h2,h3 {
+  font-size:1.2rem;
+  }
+}
+
+
+// homepage carousel
+
+
+#featured .tailor-content:nth-of-type(2) {
+  article {
+    margin-bottom:0;
+    padding-bottom:0;
+  }
+  .product-item {
+    &:hover {
+      .tailor-box__graphic {
+        opacity:.9;
+      }
+    }
+  }
+  margin:0 -1.375em;
+  img {
+    width:100%;
+  }
+}

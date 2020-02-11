@@ -1,0 +1,85 @@
+//FUNCTIONS
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-units($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+//MIXINS
+// Rem output with px fallback
+@mixin font-size($size-value: 1) {
+	font-size: ($size-value * strip-units($base-font-size)) * 1px;
+	font-size: $size-value * 1rem;
+}
+
+@mixin container {
+  @include margin(null auto);
+  @include padding(null $small-spacing);
+
+  @media #{$tablet-up} {
+    max-width: $large-screen;
+  }
+}
+
+@mixin container-large {
+  @include margin(null auto);
+  @include padding(null $small-spacing);
+
+  @media #{$tablet-up} {
+    max-width: $large-screen;
+  }
+}
+
+@mixin container-xl {
+  @include margin(null auto);
+  @include padding(null $small-spacing);
+
+  @media #{$tablet-up} {
+    max-width: $xl-screen;
+  }
+}
+
+@mixin overlay {
+  position:relative;
+  &:before {
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:0;
+    right:0;
+    top:0;
+    background-color:rgba(0,0,0,.55);
+    display:block;
+    z-index:0;
+    @media #{$tablet-up} {
+      background-color:rgba(0,0,0,.35);
+    }
+  }
+}
+
+@mixin full {
+  left:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+
+@mixin container_small {
+  @include margin(null auto);
+  @include padding(null $small-spacing);
+
+  @media #{$tablet-up} {
+    max-width: $medium-screen;
+  }
+}

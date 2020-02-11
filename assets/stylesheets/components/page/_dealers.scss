@@ -1,0 +1,199 @@
+#dealers {
+  h2 {
+    max-width:800px;
+    margin:2em 0 1.5em 0;
+    text-transform:uppercase;
+  }
+  .tailor-box {
+    padding:1em 15px;
+    //@media #{$mobile} {
+
+    //}
+  }
+  .tailor-column {
+    //display:block;
+    //width:100%;
+  }
+  .tailor-grid {
+    @include clearfix;
+    h2 {
+      padding-left:30px;
+      padding-right:30px;
+    }
+    clear:both;
+    margin:0 -30px !important;
+  }
+  .tailor-grid__item {
+    //min-height:380px;
+    float:none;
+    border:none;
+    a {
+      color:darken($yellow, 5%);
+      font-weight:bold;
+      &:hover {
+        color:$yellow;
+      }
+    }
+    display:inline-block;
+    flex:none;
+
+    padding:0 15px;
+  }
+  .tailor-box__title {
+    text-transform:uppercase;
+  }
+  .tailor-box__graphic {
+    background:white;
+    min-height:100px;
+    vertical-align:middle;
+    position:relative;
+    img {
+      border:5px solid white;
+      max-width:200px !important;
+      position:absolute;
+      //margin:0 auto;
+      left:0;
+      right:15px;
+      top:50%;
+      transform:translateY(-50%);
+      max-height:140px;
+      max-width:100%;
+      padding-bottom:10px;
+    }
+  }
+  > * {
+    display:block;
+    flex:none;
+  }
+  @media #{$tablet} {
+    min-height:400px;
+    h3:not(.tailor-box__title) {
+      display:block;
+      clear:both;
+      margin:2em 0;
+    }
+    .tailor-row {
+      @include clearfix;
+      display:block;
+      .tailor-column {
+        //float:left;
+        width:49%;
+        display:inline-block;
+        flex:none;
+      }
+    }
+  }
+  @media #{$xs} {
+    .tailor-box {
+      width:100%;
+    }
+  }
+  @media (max-width:600px) {
+    .tailor-box {
+      background:none;
+    }
+    .tailor-row {
+
+      //text-align:center;
+      display:block;
+      flex:none;
+      .tailor-box {
+      //  margin:4em 0;
+        padding:0;
+        text-align:left;
+        width:100%;
+        .tailor-box__graphic {
+          min-height:1px;
+          margin-top:2em;
+          margin-bottom:1em;
+          img {
+            position:static;
+            transform:none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.page-id-2215 .products .tailor-section__content {
+  .tailor-row {
+    margin:0 -30px;
+    @media (max-width:600px) {
+      margin:0 -15px;
+    }
+  }
+  @include container_large;
+}
+
+
+// tables
+
+#rightcolumn {
+  input[type=submit] {
+    padding:20px;
+    min-width:250px;
+    font-size:1.1rem;
+    text-transform:uppercase;
+    &:hover {
+      background:darken($yellow, 5%);
+    }
+  }
+  input {
+    border-color:gray;
+    border-radius:0;
+    margin:1em 0;
+  }
+  h2 {
+    margin:2em 0;
+  }
+}
+
+#order_detail_3 table {
+  //margin:0 -5px;
+  width:100% !important;
+  td {
+    border-bottom:none;
+    padding:0 10px;
+  }
+}
+
+#labelheader > div {
+  white-space:normal;
+  width:19%;
+  display:inline-block;
+  vertical-align:middle;
+  padding-bottom:15px;
+  font-weight:bold;
+  text-align:center;
+  &:last-child {
+    padding-left:30px;
+  }
+}
+
+#dealers {
+  .tailor-grid__item {
+    @media #{$tablet} {
+      width:49% !important;
+    }
+    @media #{$xs} {
+      width:100% !important;
+      }
+    width:33%;
+    vertical-align:top;
+    display:inline-block;
+    float:none;
+  }
+}
+
+
+.legend {
+  margin-left:-8px;
+  @include clearfix;
+  margin-top:1em;
+  margin-bottom:-1em;
+  img {
+    max-height:40px;
+    float:left;
+  }
+}

@@ -1,0 +1,163 @@
+html {
+  font-size: $base-font-size;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  @include font-size(1.125);
+  line-height: $base-line-height;
+  font-weight:500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  //letter-spacing:.5px;
+  font-weight:500 !important;
+  font-family: $heading-font-family;
+  line-height: $heading-line-height / 1.2;
+  @include margin($base-spacing null $small-spacing);
+
+  // Consectutive Headings
+  & + & {
+    margin-top: $small-spacing;
+  }
+
+  // First Child Heading
+  &:first-child:not(.site-title) {
+    margin-top: 0;
+  }
+
+  //Pre & Sub Headings
+  > small {
+    font-size: 65%;
+    display: block;
+    font-weight: 300;
+    color: inherit;//$medium-gray;
+  }
+}
+
+h1,
+.h1 {
+  @include font-size(2.5);
+}
+
+h2,
+.h2 {
+  @include font-size(2.2);
+}
+
+h3,
+.h3 {
+  @include font-size(1.75);
+}
+
+h4,
+.h4 {
+  @include font-size(1.575);
+}
+
+h5,
+.h5 {
+  @include font-size(1.325);
+}
+
+h6,
+.h6 {
+  @include font-size(1.2);
+}
+
+p {
+  margin: 0 0 $small-spacing * 1.125;
+}
+
+a {
+  color: $action-color;
+  text-decoration: none;
+  transition: color $base-duration $base-timing;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: shade($action-color, 25%);
+  }
+}
+
+// Blockquote
+blockquote {
+  position: relative;
+  background-color: $light-gray;
+  padding: $base-spacing * 2 $base-spacing;
+  @include margin(0 auto $small-spacing);
+  @include font-size(1.5);
+
+  @media #{$tablet-up} {
+    padding: $base-spacing * 2;
+  }
+
+  @media #{$desktop} {
+    padding: $base-spacing * 3;
+    max-width: none;
+    width: 150%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    .blog &, //override for blog and archive pages
+    .archive & {
+      width: 100%;
+      margin-left: 0;
+      transform: none;
+      padding: $base-spacing * 2;
+    }
+  }
+
+  :before {
+    display: block;
+    position: absolute;
+    top: $small-spacing * .5;
+    left: 50%;
+    transform: translateX(-50%);
+    content: '“';
+    font-family: 'Georgia', serif;
+    @include font-size(3);
+    font-weight: bold;
+    color: $medium-gray;
+
+    @media #{$desktop} {
+      top: $small-spacing;
+      @include font-size(3.5);
+      .blog &, //override for blog and archive pages
+      .archive & {
+        top: $small-spacing * .5;
+        left: 50%;
+      }
+    }
+  }
+
+  * {
+    max-width: 600px; //TODO variable-ize this
+    @include margin(null auto);
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-spacing 0;
+}
+
+abbr {
+  text-decoration: none;
+  cursor: help;
+}

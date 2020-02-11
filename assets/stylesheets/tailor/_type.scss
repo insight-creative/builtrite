@@ -1,0 +1,56 @@
+&.tax-type,
+&.tax-industry,
+&.page-template-page-products,
+&.page-template-template-industries {
+
+#hero {
+  h1 {
+    word-wrap:break-word;
+  //  text-shadow:0px 0px 15px rgba(0,0,0,.4);
+  }
+  .tailor-hero {
+    @media #{$mobile} {
+      padding:3em 0 !important;
+    }
+    //padding:4em 0 !important;
+    font-size:1.2em !important;
+  }
+  background-color:#000;
+  min-height:1px;
+  @media #{$mobile} {
+    @include padding(20px null);
+  }
+  //@include padding(50px null);
+  color:white;
+}
+
+}
+
+&.tax-type {
+  .site-header {
+    a[href*="product"] {
+      background:$yellow;
+    }
+  }
+}
+
+&.tax-type,
+&.tax-industry {
+  .product-item {
+    @media #{$desktop} {
+    margin-bottom:50px;
+    }
+    margin-bottom:0;
+  }
+}
+
+.desc {
+  background:$yellow;
+  //border-top: 20px solid darken($yellow, 50%);
+ > div {
+   @media #{$tablet-up} {
+    padding:6em $small-spacing;
+    }
+    padding:2em $small-spacing;
+  }
+}

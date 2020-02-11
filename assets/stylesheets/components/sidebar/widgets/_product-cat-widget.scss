@@ -1,0 +1,20 @@
+//PRODUCT CATEGORY WIDGET
+
+.product-cat-list {
+	li {
+		margin:$base-spacing 0;
+		a {
+			font-family:$SFBLACK !important;
+			&.current-menu-item {
+				font-weight:900 !important;
+			}
+			text-align:left !important;
+			font-weight:bold;
+			font-size:1.2rem;
+			line-height:1;
+			&:hover {
+				color:$medium-gray;
+			}
+		}
+	}
+}

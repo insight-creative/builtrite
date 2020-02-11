@@ -1,0 +1,16 @@
+.site-contact {
+  @media #{$tablet-up} {
+    @include padding($base-spacing * 8 null 0 null);
+  }
+  @include padding($base-spacing * 4 null);
+  padding-bottom:0;
+  @include container-large;
+
+  .custom-logo-link {
+    margin: 0 0 $base-spacing;
+    width:auto;
+    //float:left;
+  //  filter:invert(1)grayscale(100%);
+  }
+
+}//.site-contact

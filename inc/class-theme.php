@@ -75,6 +75,10 @@ if ( ! class_exists( 'builtrite' ) ) :
 				'footer-menu'   => __( 'Footer Menu', 'builtrite' ),
 			) );
 
+			register_nav_menus( array(
+				'products-menu'   => __( 'Products Menu', 'builtrite' ),
+			) );
+
 			/*
 			 * Switch default core markup for search form, comment form, comments, galleries, captions and widgets
 			 * to output valid HTML5.
